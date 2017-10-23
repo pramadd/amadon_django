@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Session words</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'amadon/style.css' %}" media="screen" title="no title"  charset="utf-8">
+    </head>
+    <body>
+        <div id="wrapper1">
+            <div id="top">
+                <h1>Thank you for your business</h1>
+            </div>
+            <div class="store">
+                <p>We charged your credit card for ${{request.session.price}}</p>
+             
+                <p>You have ordered {{request.session.count}} items 
+                    so far and spent ${{request.session.total}} with amadon.com!</p>
+                <br>
+               
+            </div>
+            <a href="/">Go Back </a>
+
+        </div>
+
+    </body>
+</html>

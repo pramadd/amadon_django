@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Session words</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'amadon/style.css' %}" media="screen" title="no title"  charset="utf-8">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="top">
+                <h1> Amadon store!</h1>
+            </div>
+            <div id="store">
+                <table>
+                        <tr>
+                            <th>Item</th>
+                            <th>Price</th>
+                            <th>Actions</th>
+                        </tr>
+                        <tr>
+                            <td>Dojo tshirt</td>
+                            <td>$19.99</td>
+                            <td>
+                            <form action="/payment" method="post">
+                                {%csrf_token%}
+                                <input type='hidden' name='product_id' value='1'>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <input type="submit" name="buy" value="Buy now!">
+                            </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Dojo sweater</td>
+                            <td>$29.99</td>
+                            <td>
+                            <form action="/payment" method="post">
+                                {%csrf_token%}
+                                <input type='hidden' name='product_id' value='2'>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <input type="submit" name="buy" value="Buy now!">
+                            </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Dojo cup</td>
+                            <td>$4.99</td>
+                            <td>
+                            <form action="/payment" method="post">
+                                {%csrf_token%}
+                                <input type='hidden' name='product_id' value='3'>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <input type="submit" name="buy" value="Buy now!">
+                            </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Algorithm book</td>
+                            <td>$49.99</td>
+                            <td>
+                            <form action="/payment" method="post">
+                                {%csrf_token%}
+                                <input type='hidden' name='product_id' value='4'>
+                                <select name="quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <input type="submit" name="buy" value="Buy now!">
+                            </form>
+                            </td>
+                        </tr>
+                    </table>
+            </div>
+
+        </div>
+
+    </body>
+</html>
